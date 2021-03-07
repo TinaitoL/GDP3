@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>A room</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Plaster&family=Roboto:ital,wght@1,900&display=swap" rel="stylesheet">
+	<link href="stylesheet1.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<header> 
+		<div class="wrapper">
+  			<div class="wave"></div>
+		</div>
+		<div class="center-outer">
+			<div class="center-inner">
+		
+				<div class="bubbles">
+					<h1>A library</h1>
+				</div>
+
+			</div>
+		</div>
+	</header>
+
+	<div class="btn">
+		<a href="index2.html" class="button1" onclick="alert('Ready?')">About Artemis the goddess</a>
+		<a href="https://danielshui.github.io/park/index.html" class="button2" onclick="alert('Let's go the park!(๑•́ ∀ •̀๑)')">Park</a>
+		<a href="https://minangela.github.io/coffeeshop/assignment2.html" class="button3" onclick="alert('Let's go to a Cafe!(๑•́ ∀ •̀๑)')">Cafe</a>
+		<a href="XXX" class="button4" onclick="alert('Not yet(๑•́ ∀ •̀๑)')">An Empty Slot</a>
+	</div>
+	
+	
+		
+<!----------------phone------------------->
+		
+	<div class="container">
+  		<div class="iphone style-1">
+    		<div class="iphone__power-btn"></div>
+    		<div class="iphone__left-btn"></div>
+    		<div class="iphone__details"></div>
+    	<div class="iphone__screen">
+      			<div class="iphone__content"></div> 
+	  			<a href="index3.html" id="heart"></a>
+   		</div>
+    		<div class="iphone__home-btn"></div>
+  		</div>
+	</div>
+
+<!----------------js bubblestitle---------------->
+<script>
+	jQuery(document).ready(function($){
+    var bArray = [];
+    var sArray = [4,6,8,10];
+ 
+    for (var i = 0; i < $('.bubbles').width(); i++) {
+        bArray.push(i);
+    }
+    function randomValue(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+  
+	setInterval(function(){
+    var size = randomValue(sArray);
+   	
+		$('.bubbles').append('<div class="individual-bubble" style="left: ' + randomValue(bArray) + 'px; width: ' + size + 'px; height:' + size + 'px;"></div>');
+    
+		$('.individual-bubble').animate({
+            'bottom': '100%',
+            'opacity' : '-=0.7'
+        }, 3000, function(){
+            $(this).remove()
+        }
+        );
+ 
+    }, 350);
+ 
+});	
+	
+</script>
+	
+</body>
+</html>
